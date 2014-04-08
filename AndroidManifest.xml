@@ -12,17 +12,18 @@
     <!-- These permissions are only required for showing the ad when pressing the Home button -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.GET_TASKS" />
-    
+
     <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="18" />
+        android:minSdkVersion="11"
+        android:targetSdkVersion="19" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-                <!-- Startapp ads -->
+
+        <!-- Startapp ads -->
         <!-- TODO: when implementing a sub project make sure we dont need to fix the task affinity -->
         <activity
             android:name="com.startapp.android.publish.list3d.List3DActivity"
@@ -33,7 +34,7 @@
             android:configChanges="orientation|keyboardHidden"
             android:taskAffinity="com.jogeeks.content.secrets.AppWall"
             android:theme="@android:style/Theme.Translucent" />
-        
+
         <!-- Admob (new Google play services version) -->
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
@@ -114,7 +115,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-		<!-- Crashlytics -->
+        <!-- Crashlytics --> 
         <meta-data
             android:name="com.crashlytics.ApiKey"
             android:value="e0a5df44cefa1c3f26953d1ed285a0dd5804e558" />

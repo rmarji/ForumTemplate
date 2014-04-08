@@ -18,6 +18,7 @@
         android:targetSdkVersion="19" />
 
     <application
+        android:name="com.jogeeks.content.secrets.MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -115,7 +116,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- Crashlytics --> 
+        <!-- Crashlytics -->
         <meta-data
             android:name="com.crashlytics.ApiKey"
             android:value="e0a5df44cefa1c3f26953d1ed285a0dd5804e558" />

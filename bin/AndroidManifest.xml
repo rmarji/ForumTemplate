@@ -1,0 +1,123 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.newlife.forum.template"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- These permissions are only required for showing the ad when pressing the Home button -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+                <!-- Startapp ads -->
+        <!-- TODO: when implementing a sub project make sure we dont need to fix the task affinity -->
+        <activity
+            android:name="com.startapp.android.publish.list3d.List3DActivity"
+            android:taskAffinity="com.jogeeks.content.secrets.AppWall"
+            android:theme="@android:style/Theme" />
+        <activity
+            android:name="com.startapp.android.publish.AppWallActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:taskAffinity="com.jogeeks.content.secrets.AppWall"
+            android:theme="@android:style/Theme.Translucent" />
+        
+        <!-- Admob (new Google play services version) -->
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="com.jogeeks.content.secrets.PostsFragment"
+            android:configChanges="orientation"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.jogeeks.content.secrets.SinglePostActivity"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_single_secret" >
+        </activity>
+        <activity
+            android:name="com.jogeeks.content.secrets.LoginFragment"
+            android:label="@string/title_activity_login" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jogeeks.content.secrets.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.jogeeks.content.secrets.SignupActivity"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_signup" >
+        </activity>
+        <activity
+            android:name="com.jogeeks.content.secrets.ProfileActivity"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_profile" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jogeeks.content.secrets.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.jogeeks.content.secrets.NewPostActivity"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_new_post" >
+        </activity>
+        <activity
+            android:name="com.jogeeks.content.secrets.EditPostActivity"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_edit_post" >
+        </activity>
+        <activity
+            android:name="com.jogeeks.content.comments.CommentsActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_comments" >
+        </activity>
+        <activity
+            android:name="com.jogeeks.content.secrets.MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_main" >
+        </activity>
+        <activity
+            android:name="com.jogeeks.content.secrets.InternetConnectionDialogFragment"
+            android:label="@string/title_activity_internet_connection_dialog_fragment" >
+        </activity>
+
+        <service
+            android:name="com.jogeeks.content.secrets.InternetConnectivityService"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/app_name" >
+        </service>
+
+        <activity
+            android:name="com.jogeeks.content.secrets.SplashActivity"
+            android:label="@string/title_activity_test"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+		<!-- Crashlytics -->
+        <meta-data
+            android:name="com.crashlytics.ApiKey"
+            android:value="e0a5df44cefa1c3f26953d1ed285a0dd5804e558" />
+    </application>
+
+</manifest>
